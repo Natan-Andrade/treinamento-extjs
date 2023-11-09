@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Exemplo ExtJS 3.4.0</title>
+    <link rel="stylesheet" type="text/css" href="extjs/resources/css/ext-all.css">
+    <script type="text/javascript" src="extjs/adapter/ext/ext-base.js"></script>
+    <script type="text/javascript" src="extjs/ext-all.js"></script>
+    <script type="text/javascript" src="data.js"></script> 
+    <script type="text/javascript" src="app.js"></script> 
+    <!-- <script type="text/javascript">
+        Ext.onReady(function () {
+            Ext.QuickTips.init();
+            var fileArray = [];
+
+            var fileForm = new Ext.form.FormPanel({
+                renderTo: Ext.getBody(),
+                fileUpload: true,
+                frame: true,
+                title: 'Envio de Múltiplos Arquivos',
+                width: 400,
+                items: [{
+                    xtype: 'textfield',
+                    fieldLabel: 'Arquivo',
+                    name: 'file',
+                    inputType: 'file'
+                }],
+                buttons: [{
+                    text: 'Adicionar Arquivo',
+                    handler: function () {
+                        var form = fileForm.getForm();
+                        var fileName = form.findField('file').getValue();
+                        if (fileName) {
+                            fileArray.push(fileName);
+                            form.findField('file').reset();
+                            grid.getStore().loadData(fileArray);
+                        }
+                    }
+                }, {
+                    text: 'Enviar Arquivos',
+                    handler: function () {
+                        if (fileArray.length > 0) {
+                            fileForm.getForm().submit({
+                                url: 'script.php', // Substitua com o URL do script no servidor
+                                method: 'POST',
+                                success: function (form, action) {
+                                    console.log('Arquivos enviados com sucesso:', action.result.message);
+                                },
+                                failure: function (form, action) {
+                                    console.error('Erro ao enviar os arquivos:', action.result.message);
+                                }
+                            });
+                        }
+                    }
+                }]
+            });
+
+            var grid = new Ext.grid.GridPanel({
+                renderTo: Ext.getBody(),
+                frame: true,
+                title: 'Lista de Arquivos',
+                width: 400,
+                height: 150,
+                store: new Ext.data.ArrayStore({
+                    fields: ['fileName'],
+                    data: fileArray
+                }),
+                columns: [
+                    { header: 'Nome do Arquivo', dataIndex: 'fileName', width: 200 }
+                ]
+            });
+        });
+    </script> -->
+</head>
+<body>
+</body>
+</html>
